@@ -1,7 +1,6 @@
-name: 'password Policy 90 Days'
+name: 'Saplings - Password Policy 90 Days'
 description: 'Installs and configures Password Policy and sets 90 day expiration default.'
 type: 'Site'
-
 install:
   # Install primary module.
   - password_policy
@@ -9,12 +8,10 @@ install:
   - password_policy_characters
   - password_policy_history
   - password_policy_length
-
 config:
+  strict: false
   import:
     password_policy:
-      # Add Password Policy Settings
-      - password_policy.settings
       # Add Password Policy fields.
       - field.field.user.user.field_last_password_reset
       - field.field.user.user.field_password_expiration

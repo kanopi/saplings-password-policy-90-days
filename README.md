@@ -1,42 +1,36 @@
-# Password Policy - 90 Days
-A Drupal recipe that installs and configures Password Policy and sets 90-day
-expiration default.
+![saplings](https://github.com/kanopi/saplings/assets/5177009/a6377e32-deb2-49d8-873a-f3dd5a36fa7c)
+
+# Saplings - Password Policy - 90 Days
+
+A Drupal recipe that installs and configures the Password Policy module and sets
+a 90-day expiration default.
 
 This recipe installs a Password Policy that has the following rules:
 
-* Password must be changed every 90 days.
-* Password can't be one of the 5 most recent passwords.
-* Password must contain at least 1 letter character.
-* Password must contain at least 1 special character.
-* Password must contain at least 1 uppercase character.
-* Password must contain at least 1 lowercase character.
-* Password must contain at least 1 numeric character.
-* Password character length must be at least 12 characters
+- Password must be changed every 90 days.
+- Password can't be one of the 5 most recent passwords.
+- Password must contain at least 1 letter character.
+- Password must contain at least 1 special character.
+- Password must contain at least 1 uppercase character.
+- Password must contain at least 1 lowercase character.
+- Password must contain at least 1 numeric character.
+- Password character length must be at least 12 characters
 
 
-## Configuring Drupal for Recipes
+## Requiring this Recipe
 
-See https://www.drupal.org/files/issues/2023-10-01/Configuring%20Drupal%20to%20Apply%20Recipes.md
-
-The patch referenced in this file is not valid.  Please refer to the [Recipes Initiative project page](https://www.drupal.org/project/distributions_recipes) for the patch version that applies to your current Drupal version.
-
-After running `composer update drupal/core`, clear the Drupal cache with `drush cr` before doing any other recipe operations.
-
-## Installing this Recipe
-
-`composer require kanopi/password-policy-90-days`
+`composer require kanopi/saplings-password-policy-90-days`
 
 
 ## Applying this Recipe
 
-`cd` into your drupal root.
-Run`php core/scripts/drupal recipe recipes/contrib/password-policy-90-days`
-Run `drush cr`
+`drush cr`
+`drush recipe saplings-password-policy-90-days`
 
 **or**
 
 If you have our Docksal command in your project, run the following command:
-`fin recipe-apply password-policy-90-days`
+`fin recipe-apply saplings-password-policy-90-days`
 
 
 ## Unpacking this Recipe
@@ -44,12 +38,7 @@ If you have our Docksal command in your project, run the following command:
 To unpack this recipe's dependencies to your site's composer.json, in the root
 of your project run:
 
-`composer unpack kanopi/password-policy-90-days`
+`composer unpack kanopi/saplings-password-policy-90-days`
 
 If you have our Docksal command in your project, run the following command:
-`fin recipe-unpack kanopi/password-policy-90-days`
-
-
-## Known Issues
-
-* If the Password Policy module is currently enabled, installation will fail.
+`fin recipe-unpack kanopi/saplings-password-policy-90-days`
